@@ -10,7 +10,7 @@ public class Card
       this.suit = suit; 
    } 
 
-   // return String representation of Card
+   @Override
    public String toString() 
    { 
       return face + " of " + suit;
@@ -19,4 +19,17 @@ public class Card
    public String getFace() {
        return face;
    }
+    public String getSuit() {
+
+        return suit;}
+
+       public String getImagePath() {
+        String faceLower = face.toLowerCase(); // ex: "Ace" -> "ace"
+        String suitLower = suit.toLowerCase(); // ex: "Clubs" -> "clubs"
+        return "/assets/img/cartas/" + faceLower + "_of_" + suitLower + ".png";
+    }
+
+
+    
+
 } // end class Card

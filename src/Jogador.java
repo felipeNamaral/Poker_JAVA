@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 
 public class Jogador {
     private int pontos = 0;
     private String nome;
     private List<Card> mao = new ArrayList<>();
     private int aces =0;
-
     public Jogador(String nome) {
         this.nome = nome;
     }
@@ -42,6 +44,7 @@ public class Jogador {
         }
     }
 
+
     public void mostrarMao() {
         System.out.println(nome + " tem as cartas:");
         for (Card c : mao) {
@@ -49,6 +52,23 @@ public class Jogador {
         }
         System.out.println("Total de pontos: " + pontos);
     }
+
+
+    public void mostrarMao(HBox container) {
+    
+    container.getChildren().clear(); // limpa cartas antigas
+    for (Card c : mao) {
+        ImageView cartaView = new ImageView(new Image(
+            getClass().getResource("/assets/img/cartas/" + c.getFace().toLowerCase() + "_of_" + c.getSuit().toLowerCase() + ".png")
+            .toExternalForm()
+        ));
+        cartaView.setFitWidth(80);
+        cartaView.setFitHeight(120);
+        container.getChildren().add(cartaView);}
+    }
+
+
+
 
     public void Hit(Card carta) {
         adicionarCarta(carta);
