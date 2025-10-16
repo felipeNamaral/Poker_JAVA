@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "blackJack",
+      "request": "launch",
+      "mainClass": "blackJack",
+      "projectName": "Poker_PUC_6bac39b0"
+    },
+    {
+      "type": "java",
+      "name": "Executar JavaFX",
+      "request": "launch",
+      "mainClass": "Main",
+      "vmArgs": "--module-path \"C:/Users/fenat/OneDrive/Desktop/openjfx-25_windows-x64_bin-sdk/javafx-sdk-25/lib\" --add-modules javafx.controls,javafx.fxml"
+    }
+  ]
+}
